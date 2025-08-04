@@ -1,0 +1,270 @@
+       @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+       body {
+           background-color: black;
+           color: var(--text-light);
+           line-height: 1.6;
+           overflow-x: hidden;
+       }
+
+       .containermain {
+           margin: 0 3rem;
+           padding: 2rem;
+       }
+
+       .header {
+           text-align: center;
+           margin-bottom: 3rem;
+           position: relative;
+           overflow: hidden;
+           padding: 2rem 0;
+           background: white;
+    border-radius: 1rem;
+       }
+
+       .header::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background: linear-gradient(135deg, rgba(237, 29, 36, 0.1) 0%, rgba(58, 110, 165, 0.1) 100%);
+           z-index: -1;
+           border-radius: 15px;
+       }
+
+
+
+       .header p {
+           font-size: 1.2rem;
+           color: black;
+           margin: 0 auto;
+       }
+
+       .infinity-stone {
+           position: absolute;
+           width: 15px;
+           height: 15px;
+           border-radius: 50%;
+           filter: blur(1px);
+           opacity: 0.7;
+           animation: float 6s infinite ease-in-out;
+       }
+
+       @keyframes float {
+
+           0%,
+           100% {
+               transform: translateY(0) rotate(0deg);
+           }
+
+           50% {
+               transform: translateY(-20px) rotate(180deg);
+           }
+       }
+
+       .stone-space {
+           position: absolute;
+           width: 100%;
+           height: 100%;
+           top: 0;
+           left: 0;
+           pointer-events: none;
+           z-index: -1;
+       }
+
+       .blog-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+           gap: 2rem;
+           margin-bottom: 4rem;
+       }
+
+       .blog-card {
+           background: var(--bg-light);
+           border-radius: 12px;
+           overflow: hidden;
+           transition: transform 0.3s ease, box-shadow 0.3s ease;
+           position: relative;
+           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+       }
+
+       .blog-card:hover {
+           transform: translateY(-10px);
+           box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+       }
+
+       .card-header {
+           height: 200px;
+           position: relative;
+           overflow: hidden;
+       }
+
+       .card-header img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           transition: transform 0.5s ease;
+       }
+
+       .blog-card:hover .card-header img {
+           transform: scale(1.1);
+       }
+
+       .card-theme {
+           position: absolute;
+           bottom: 20px;
+           left: 20px;
+           background: rgba(0, 0, 0, 0.7);
+           padding: 0.5rem 1rem;
+           border-radius: 20px;
+           font-size: 0.9rem;
+           font-weight: 600;
+           text-transform: uppercase;
+           letter-spacing: 1px;
+       }
+
+       .card-body {
+           padding: 1.5rem;
+       }
+
+       .card-body h3 {
+           font-size: 1.5rem;
+           margin-bottom: 1rem;
+           color: var(--text-light);
+           position: relative;
+           display: inline-block;
+       }
+
+       .card-body h3::after {
+           content: '';
+           position: absolute;
+           bottom: -5px;
+           left: 0;
+           width: 50px;
+           height: 3px;
+           background: linear-gradient(90deg, var(--iron-red), var(--captain-blue));
+           border-radius: 3px;
+       }
+
+       .card-body p {
+           color: var(--text-dim);
+           margin-bottom: 1.5rem;
+       }
+
+       .card-footer {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 0 1.5rem 1.5rem;
+       }
+
+       .read-more {
+           background: linear-gradient(90deg, var(--iron-red), var(--captain-blue));
+           color: white;
+           border: none;
+           padding: 0.5rem 1.5rem;
+           border-radius: 30px;
+           font-weight: 600;
+           cursor: pointer;
+           transition: transform 0.3s ease, box-shadow 0.3s ease;
+       }
+
+       .read-more:hover {
+           transform: translateY(-3px);
+           box-shadow: 0 5px 15px rgba(237, 29, 36, 0.4);
+       }
+
+       .weekly-insights {
+           background: var(--bg-light);
+           border-radius: 12px;
+           padding: 2rem;
+           margin-bottom: 3rem;
+           position: relative;
+           overflow: hidden;
+       }
+
+       .weekly-insights::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 5px;
+           height: 100%;
+           background: linear-gradient(268deg, #000000, #ffffff);
+       }
+
+       .weekly-insights h2 {
+           font-size: 2rem;
+           margin-bottom: 1.5rem;
+           color: var(--text-light);
+           position: relative;
+           display: inline-block;
+       }
+
+       .weekly-insights h2::after {
+           content: '';
+           position: absolute;
+           bottom: -5px;
+           left: 0;
+           width: 100%;
+           height: 3px;
+           background: linear-gradient(90deg, var(--iron-red), transparent);
+           border-radius: 3px;
+       }
+
+       .insights-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+           gap: 1.5rem;
+       }
+
+       .insight-item {
+           background: rgba(255, 255, 255, 0.05);
+           padding: 1.5rem;
+           border-radius: 8px;
+           transition: transform 0.3s ease;
+       }
+
+       .insight-item:hover {
+           transform: translateY(-5px);
+           background: rgba(255, 255, 255, 0.1);
+       }
+
+       .insight-item h4 {
+           color: var(--text-light);
+           margin-bottom: 0.5rem;
+           font-size: 1.2rem;
+       }
+
+       .insight-item p {
+           color: var(--text-dim);
+           font-size: 0.9rem;
+       }
+
+       @keyframes rotate {
+           0% {
+               transform: rotate(0deg);
+           }
+
+           100% {
+               transform: rotate(360deg);
+           }
+       }
+
+       @media (max-width: 768px) {
+           .header h1 {
+               font-size: 2.2rem;
+           }
+
+           .blog-grid {
+               grid-template-columns: 1fr;
+           }
+       }
+
+       @media (max-width: 767px) {
+           .containermain {
+               margin: 0;
+           }
+       }
